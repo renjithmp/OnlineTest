@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>File Type Qustion uploader</title>
+    <link href="Content/FileUploader.css" rel="stylesheet" />
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>    
+    <script type="text/javascript" src="Scripts/ng-file-upload-shim.min.js"></script>
+    <script type="text/javascript" src="Scripts/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="Scripts/Project_Scripts/fileupload_angular_controller.js"></script>
+</head>
+<body>
+    <!--<div ng-app="fileUpload" ng-controller="MyCtrl">
+        Username
+        <input type="text" ng-model="username"<br /><br />
+        watching model: 
+        <div class="button"  ngf-select  ng-model="file" ngf-multiple="false">Select File</div>
+        on file change multiple: 
+        <div class="button" ngf-select="upload($files)" ngf-multiple="true">Select Files</div>
+        Drop File:
+        <div ngf-drop ngf-select ng-model="files" class="drop-box"
+ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true" accept="image/*,application/pdf,audio/mpeg,video/*">Drop files here images,videos etc</div>
+        <div ngf-no-file-drop>drag drop not supported</div>
+        <br/>
+        Fiels :
+        <ul><li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li></ul>
+        Upload Log:
+        <pre>{{log}}</pre>-->
+    <div ng-app="fileUpload" ng-controller="MyCtrl">
+        Username
+        <input type="text" ng-model="username"><br /><br />
+        watching model:
+        <div class="button" ngf-select ng-model="file" ngf-multiple="false">Select File</div>
+        on file change multiple:
+        <div class="button" ngf-select="upload($files)" ngf-multiple="true">Select File</div>
+        Drop File:
+        <div ngf-drop ngf-select ng-model="files" class="drop-box"
+             ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+             accept="image/*,application/pdf"
+             ngf-pattern="'image/*,application/pdf'">Drop pdfs or images here or click to upload</div>
+        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+        Files:
+        <ul>
+            <li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+        </ul>
+        Upload Log:
+        <pre>{{log}}</pre>
+
+
+        <video width="480" height="320" controls="controls" autoplay="autoplay">
+            <source src={{stream_source}} type="video/mp4" />
+        </video>
+    </div>
+</body>
+</html>
